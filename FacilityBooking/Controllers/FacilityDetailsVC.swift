@@ -12,12 +12,21 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var bookSlotButtonOutlet: UIButton!
-    
 
+    @IBOutlet weak var facilityImage: UIImageView!
+
+    @IBOutlet weak var preveousButtonOutlet: UIButton!
+    @IBOutlet weak var nextArrowButtonOutlet: UIButton!
+    @IBOutlet weak var dateLabel: UILabel!
+
+    @IBOutlet weak var firstSessionPriceLabel: UILabel!
+    @IBOutlet weak var secondSessionPriceLabel: UILabel!
+    
     var tileString:String = ""
     
     var slotsArray = ["10 AM - 11 AM", "11 AM - 12 PM","12 PM - 13 PM","13 PM - 14 PM","14 PM - 15 PM","15 PM - 16 PM", "16 PM - 17 PM","17 PM - 18 PM","18 PM - 19 PM","19 PM - 20 PM","20 PM - 21 PM","21 PM - 22 PM"]
-
+   
+    var dateArray = ["Jan 3 2019","Jan 4 2019","Jan 5 2019","Jan 6 2019","Jan 7 2019","Jan 8 2019","Jan 8 2019"]
     
     var selectedSlotString:String? = "0"
     
@@ -28,8 +37,31 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
         
         self.title = tileString
         
-        bookSlotButtonOutlet.backgroundColor = AppUtilitiesSwift.hexStringToUIColor(hex: AppUtilitiesSwift.BUTTON_GREY_COLOR)
+        if self.tileString == "Club house"{
+            self.facilityImage.image = UIImage(named: "clubHouse")
+            self.firstSessionPriceLabel.text = "10 AM to 4 PM  - Rs.100/hr"
+            self.secondSessionPriceLabel.isHidden = false
+            self.secondSessionPriceLabel.text = "4 AM to 10 PM  - Rs.500/hr"
+        }
+        else{
+            self.facilityImage.image = UIImage(named: "tenis.jpg")
+            self.firstSessionPriceLabel.text = "Rs. 50/hr "
+            self.secondSessionPriceLabel.isHidden = true
+        }
         
+        bookSlotButtonOutlet.backgroundColor = AppUtilitiesSwift.hexStringToUIColor(hex: AppUtilitiesSwift.BUTTON_GREY_COLOR)
+    
+    }
+    
+    
+    //MARK: Date selection for the week
+    
+    @IBAction func preveousButtonClicked(_ sender: Any) {
+       print("Clicked in preveous button")
+    }
+    
+    @IBAction func nextButtonClicked(_ sender: Any) {
+        print("Clicked in next button")
     }
     
     
@@ -190,6 +222,8 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
     }
     
     
+    
+    //MARK: Slot Book Button Action
     
     @IBAction func bookSlotButtonClicked(_ sender: Any) {
    
