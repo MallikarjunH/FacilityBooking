@@ -16,10 +16,9 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
 
     var tileString:String = ""
     
-    var slotsForClubHouse = ["10 AM - 11 AM", "11 AM - 12 PM","12 PM - 13 PM","13 PM - 14 PM","14 PM - 15 PM","15 PM - 16 PM", "16 PM - 17 PM","17 PM - 18 PM","18 PM - 19 PM","19 PM - 20 PM","20 PM - 21 PM","21 PM - 22 PM"]
-    var slotsForTenisCourtHouse = ["10 AM - 11 AM", "11 AM - 12 PM","12 PM - 13 PM","13 PM - 14 PM","14 PM - 15 PM","15 PM - 16 PM", "16 PM - 17 PM","17 PM - 18 PM","18 PM - 19 PM","19 PM - 20 PM","20 PM - 21 PM","21 PM - 22 PM"]
-    
+    var slotsArray = ["10 AM - 11 AM", "11 AM - 12 PM","12 PM - 13 PM","13 PM - 14 PM","14 PM - 15 PM","15 PM - 16 PM", "16 PM - 17 PM","17 PM - 18 PM","18 PM - 19 PM","19 PM - 20 PM","20 PM - 21 PM","21 PM - 22 PM"]
 
+    
     var selectedSlotString:String? = "0"
     
     override func viewDidLoad() {
@@ -38,24 +37,13 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if self.tileString == "Club house"{
-            
-            if (self.slotsForClubHouse.count == 0) {
+            if (self.slotsArray.count == 0) {
                 self.mainCollectionView.setEmptyMessage("No slots are available")
             } else {
                 self.mainCollectionView.restore()
             }
-            return self.slotsForClubHouse.count
-        }
-        else{
-            
-            if (self.slotsForTenisCourtHouse.count == 0) {
-                    self.mainCollectionView.setEmptyMessage("No slots are available")
-                } else {
-                    self.mainCollectionView.restore()
-                }
-                return self.slotsForTenisCourtHouse.count
-            }
+            return self.slotsArray.count
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -84,14 +72,9 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TimeSelectionCollectionCellId", for: indexPath) as! TimeSelectionCollectionCell
-        
-        if self.tileString == "Club house"{
             
-            cell.timeButton.setTitle(self.slotsForClubHouse[indexPath.item], for:.normal)
-        }
-        else{
-            cell.timeButton.setTitle(self.slotsForTenisCourtHouse[indexPath.item], for:.normal)
-        }
+        cell.timeButton.setTitle(self.slotsArray[indexPath.item], for:.normal)
+
         
        // cell.timeButton.setTitle(self.slotsForClubHouse[indexPath.item], for:.normal)
         cell.timeButton.tag = indexPath.row
@@ -101,7 +84,7 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
         let greenColor : UIColor = AppUtilitiesSwift.hexStringToUIColor(hex:AppUtilitiesSwift.BUTTON_GREEN_COLOR)
         
         
-        if(selectedSlotString == self.slotsForClubHouse[indexPath.row]  || selectedSlotString == self.slotsForTenisCourtHouse[indexPath.row])
+        if(selectedSlotString == self.slotsArray[indexPath.row])
         {
             cell.timeButton.layer.borderColor = greenColor.cgColor
             cell.timeButton.setTitleColor(greenColor, for: .normal)
@@ -111,6 +94,8 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
             cell.timeButton.layer.borderColor = greyColor.cgColor
             cell.timeButton.setTitleColor(greyColor, for: .normal)
         }
+        
+        
         
         return  cell
     }
@@ -125,16 +110,16 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
     {
         if self.tileString == "Club house"{
             
-            print("Selected Slot is: \(self.slotsForClubHouse[sender.tag])")
+            print("Selected Slot is: \(self.slotsArray[sender.tag])")
             
             
-            if(selectedSlotString == self.slotsForClubHouse[sender.tag])
+            if(selectedSlotString == self.slotsArray[sender.tag])
             {
                 selectedSlotString = "0"
             }
             else
             {
-                selectedSlotString = self.slotsForClubHouse[sender.tag]
+                selectedSlotString = self.slotsArray[sender.tag]
                 
                 if GlobalVariables.sharedManager.selectedSlotsArrayForClub.count > 0 {
                     
@@ -156,15 +141,15 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
             
         }
         else{
-            print("Selected Slot is: \(self.slotsForTenisCourtHouse[sender.tag])")
+            print("Selected Slot is: \(self.slotsArray[sender.tag])")
             
-            if(selectedSlotString == self.slotsForTenisCourtHouse[sender.tag])
+            if(selectedSlotString == self.slotsArray[sender.tag])
             {
                 selectedSlotString = "0"
             }
             else
             {
-                selectedSlotString = self.slotsForTenisCourtHouse[sender.tag]
+                selectedSlotString = self.slotsArray[sender.tag]
                 //GlobalVariables.sharedManager.selectedSlotsArrayForTennisCourt?.append(selectedSlotString!)
                 
                 if GlobalVariables.sharedManager.selectedSlotsArrayForTennisCourt.count > 0 {
@@ -208,26 +193,33 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
     
     @IBAction func bookSlotButtonClicked(_ sender: Any) {
    
-        print("Slot is selected")
+        print("Clicked on Book Slot")
         // AppUtilitiesSwift.showAlert(title: "Success", message: "Slot is selected successfully", vc: self)
         // self.showAlertWithAction(message: "Slot is selected successfully.")
         
-        if self.tileString == "Club house"{
+        if  selectedSlotString != "0" {
             
-            if (selectedSlotString?.hasPrefix("16"))! || (selectedSlotString?.hasPrefix("17"))! || (selectedSlotString?.hasPrefix("18"))! || (selectedSlotString?.hasPrefix("19"))! || (selectedSlotString?.hasPrefix("20"))! {
+            if self.tileString == "Club house"{
                 
-                //Rs.500 per hour
-                 self.showAlertWithAction(message: "Slot is selected successfully. Rs. 500") //single slot selection
+                if (selectedSlotString?.hasPrefix("16"))! || (selectedSlotString?.hasPrefix("17"))! || (selectedSlotString?.hasPrefix("18"))! || (selectedSlotString?.hasPrefix("19"))! || (selectedSlotString?.hasPrefix("20"))! {
+                    
+                    //Rs.500 per hour
+                     self.showAlertWithAction(message: "Slot is selected successfully. Rs. 500") //single slot selection
+                }
+                else{
+                    //Rs. 100 per hour
+                    self.showAlertWithAction(message: "Slot is selected successfully. Rs. 100")  //single slot selection
+                }
             }
             else{
-                //Rs. 100 per hour
-                self.showAlertWithAction(message: "Slot is selected successfully. Rs. 100")  //single slot selection
+                
+                self.showAlertWithAction(message: "Slot is selected successfully. Rs. 50") //single slot selection
             }
         }
         else{
-            
-            self.showAlertWithAction(message: "Slot is selected successfully. Rs. 50") //single slot selection
+            //do nothing
         }
+        
        
     }
     
