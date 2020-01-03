@@ -22,7 +22,9 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
     @IBOutlet weak var firstSessionPriceLabel: UILabel!
     @IBOutlet weak var secondSessionPriceLabel: UILabel!
     
+    
     var tileString:String = ""
+    var selectedDateIndex = 0
     
     var slotsArray = ["10 AM - 11 AM", "11 AM - 12 PM","12 PM - 13 PM","13 PM - 14 PM","14 PM - 15 PM","15 PM - 16 PM", "16 PM - 17 PM","17 PM - 18 PM","18 PM - 19 PM","19 PM - 20 PM","20 PM - 21 PM","21 PM - 22 PM"]
    
@@ -49,6 +51,7 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
             self.secondSessionPriceLabel.isHidden = true
         }
         
+        self.preveousButtonOutlet.setImage(UIImage(named: "BA_left_disable_arrow"), for: .normal)
         bookSlotButtonOutlet.backgroundColor = AppUtilitiesSwift.hexStringToUIColor(hex: AppUtilitiesSwift.BUTTON_GREY_COLOR)
     
     }
@@ -58,12 +61,53 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
     
     @IBAction func preveousButtonClicked(_ sender: Any) {
        print("Clicked in preveous button")
+        if selectedDateIndex == 0 {
+            //disable left button image
+        }
+        else{
+            selectedDateIndex = selectedDateIndex - 1
+        }
+        
+        self.updateSelectedDateValue()
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         print("Clicked in next button")
+        if selectedDateIndex == 6 {
+            //disable right button image
+        }
+        else{
+            selectedDateIndex = selectedDateIndex + 1
+        }
+        
+        self.updateSelectedDateValue()
     }
     
+    
+    func updateSelectedDateValue(){
+        
+        DispatchQueue.main.async {
+             
+            self.dateLabel.text = self.dateArray[self.selectedDateIndex]
+            
+            if self.selectedDateIndex == 0 {
+                //disable left button image
+                self.preveousButtonOutlet.setImage(UIImage(named: "BA_left_disable_arrow"), for: .normal)
+            }
+            else{
+                self.preveousButtonOutlet.setImage(UIImage(named: "OC_left_arrow"), for: .normal)
+            }
+            
+            if self.selectedDateIndex == 6 {
+                //disable right button image
+                self.nextArrowButtonOutlet.setImage(UIImage(named: "BA_right_disable_arrow"), for: .normal)
+            }else{
+                self.nextArrowButtonOutlet.setImage(UIImage(named: "OC_right_arrow"), for: .normal)
+            }
+            
+            //self.preveousButtonOutlet.setImage(UIImage(named: "OC_left_arrow"), for: .normal)
+        }
+    }
     
     //MARK: CollectionView Delegate mthods
     
@@ -238,16 +282,16 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
                 if (selectedSlotString?.hasPrefix("16"))! || (selectedSlotString?.hasPrefix("17"))! || (selectedSlotString?.hasPrefix("18"))! || (selectedSlotString?.hasPrefix("19"))! || (selectedSlotString?.hasPrefix("20"))! {
                     
                     //Rs.500 per hour
-                     self.showAlertWithAction(message: "Slot is selected successfully. Rs. 500") //single slot selection
+                     self.showAlertWithAction(message: "Slot is selected successfully on \(self.dateArray[self.selectedDateIndex]) and Paid Rs. 500") //single slot selection
                 }
                 else{
                     //Rs. 100 per hour
-                    self.showAlertWithAction(message: "Slot is selected successfully. Rs. 100")  //single slot selection
+                    self.showAlertWithAction(message: "Slot is selected successfully on \(self.dateArray[self.selectedDateIndex]) and Paid Rs. 100")  //single slot selection
                 }
             }
             else{
                 
-                self.showAlertWithAction(message: "Slot is selected successfully. Rs. 50") //single slot selection
+                self.showAlertWithAction(message: "Slot is selected successfully on \(self.dateArray[self.selectedDateIndex]) and Paid Rs. 50") //single slot selection
             }
         }
         else{
