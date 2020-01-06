@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		068BDF9723BDE9D6009C1C13 /* FacilityBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacilityBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		068BDF9723BDE9D6009C1C13 /* Facility Booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Facility Booking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		068BDF9A23BDE9D6009C1C13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		068BDF9C23BDE9D6009C1C13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		068BDFA123BDE9D6009C1C13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		068BDF9823BDE9D6009C1C13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				068BDF9723BDE9D6009C1C13 /* FacilityBooking.app */,
+				068BDF9723BDE9D6009C1C13 /* Facility Booking.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,7 +154,7 @@
 			);
 			name = FacilityBooking;
 			productName = FacilityBooking;
-			productReference = 068BDF9723BDE9D6009C1C13 /* FacilityBooking.app */;
+			productReference = 068BDF9723BDE9D6009C1C13 /* Facility Booking.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -371,7 +371,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TestExamples.FacilityBooking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Facility Booking";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -391,7 +391,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = TestExamples.FacilityBooking;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Facility Booking";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
