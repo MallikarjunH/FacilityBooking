@@ -33,16 +33,18 @@ class FacilityBookingTableViewCell: UITableViewCell {
 
 class TimeSelectionCollectionCell: UICollectionViewCell{
 
-    @IBOutlet weak var timeButton: UIButton!
+ // @IBOutlet weak var timeButton: UIButton!
    
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let greyColor : UIColor = AppUtilitiesSwift.hexStringToUIColor(hex:AppUtilitiesSwift.TEXT_GREY_COLOR)
         
-        timeButton.layer.borderColor = greyColor.cgColor
-        timeButton.layer.borderWidth = 2
-        timeButton.titleLabel?.textColor = greyColor
+        timeLabel.layer.borderColor = greyColor.cgColor
+        timeLabel.layer.borderWidth = 2
+        timeLabel.textColor = greyColor
         
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ltg-TX-3tC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ltg-TX-3tC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -130,24 +130,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="151" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Uu-Mx-u08">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 AM - 12 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDU-nd-q9L">
                                                     <rect key="frame" x="1" y="1" width="149" height="57"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="10 AM - 11 AM">
-                                                        <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="6Uu-Mx-u08" firstAttribute="top" secondItem="AAi-pD-goN" secondAttribute="top" constant="1" id="eJC-zy-ex5"/>
-                                            <constraint firstAttribute="trailing" secondItem="6Uu-Mx-u08" secondAttribute="trailing" constant="1" id="ecn-4n-tV9"/>
-                                            <constraint firstAttribute="bottom" secondItem="6Uu-Mx-u08" secondAttribute="bottom" constant="1" id="fU4-qS-URk"/>
-                                            <constraint firstItem="6Uu-Mx-u08" firstAttribute="leading" secondItem="AAi-pD-goN" secondAttribute="leading" constant="1" id="qGn-Ym-0qh"/>
+                                            <constraint firstAttribute="bottom" secondItem="pDU-nd-q9L" secondAttribute="bottom" constant="1" id="4QM-1b-F5W"/>
+                                            <constraint firstAttribute="trailing" secondItem="pDU-nd-q9L" secondAttribute="trailing" constant="1" id="BC4-4m-v17"/>
+                                            <constraint firstItem="pDU-nd-q9L" firstAttribute="leading" secondItem="AAi-pD-goN" secondAttribute="leading" constant="1" id="h6p-pK-NWf"/>
+                                            <constraint firstItem="pDU-nd-q9L" firstAttribute="top" secondItem="AAi-pD-goN" secondAttribute="top" constant="1" id="jsQ-0L-bge"/>
                                         </constraints>
                                         <size key="customSize" width="151" height="59"/>
                                         <connections>
-                                            <outlet property="timeButton" destination="6Uu-Mx-u08" id="bVa-9J-g8P"/>
+                                            <outlet property="timeLabel" destination="pDU-nd-q9L" id="xkA-Ia-n4p"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
