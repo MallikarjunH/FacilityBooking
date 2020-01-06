@@ -12,7 +12,7 @@ class FacilityBookingList: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     var boookingFacilitiesNameArray = ["Club house", "Tennis Court"]
-    var boookingFacilitiesImgArray = ["clubHouse", "tenis.jpg"]
+    var boookingFacilitiesImgArray = ["clubHouse", "tennis-512.png"]
     
     
     @IBOutlet weak var mainTableView: UITableView!

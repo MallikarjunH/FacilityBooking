@@ -14,12 +14,12 @@
 		068BDFA723BDE9E4009C1C13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068BDFA523BDE9E4009C1C13 /* LaunchScreen.storyboard */; };
 		068BDFAF23BDEAE5009C1C13 /* FacilityBookingCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BDFAE23BDEAE5009C1C13 /* FacilityBookingCells.swift */; };
 		068BDFB123BDEC16009C1C13 /* FacilityBookingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BDFB023BDEC16009C1C13 /* FacilityBookingList.swift */; };
-		068BDFB523BDEEE8009C1C13 /* tenis.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 068BDFB323BDEEE8009C1C13 /* tenis.jpg */; };
 		068BDFB623BDEEE8009C1C13 /* clubHouse.png in Resources */ = {isa = PBXBuildFile; fileRef = 068BDFB423BDEEE8009C1C13 /* clubHouse.png */; };
 		068BDFBB23BDEFDB009C1C13 /* FacilityDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BDFBA23BDEFDB009C1C13 /* FacilityDetailsVC.swift */; };
 		068BDFBD23BDF54A009C1C13 /* AppUtilitiesSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BDFBC23BDF54A009C1C13 /* AppUtilitiesSwift.swift */; };
 		068BDFC323BE0191009C1C13 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BDFC223BE0191009C1C13 /* GlobalVariables.swift */; };
 		068BDFC523BE173C009C1C13 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 068BDFC423BE173C009C1C13 /* logo.jpg */; };
+		068BDFC923C303CF009C1C13 /* tennis-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 068BDFC723C303CF009C1C13 /* tennis-512.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +32,12 @@
 		068BDFA823BDE9E4009C1C13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		068BDFAE23BDEAE5009C1C13 /* FacilityBookingCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityBookingCells.swift; sourceTree = "<group>"; };
 		068BDFB023BDEC16009C1C13 /* FacilityBookingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityBookingList.swift; sourceTree = "<group>"; };
-		068BDFB323BDEEE8009C1C13 /* tenis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tenis.jpg; sourceTree = "<group>"; };
 		068BDFB423BDEEE8009C1C13 /* clubHouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clubHouse.png; sourceTree = "<group>"; };
 		068BDFBA23BDEFDB009C1C13 /* FacilityDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityDetailsVC.swift; sourceTree = "<group>"; };
 		068BDFBC23BDF54A009C1C13 /* AppUtilitiesSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtilitiesSwift.swift; sourceTree = "<group>"; };
 		068BDFC223BE0191009C1C13 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		068BDFC423BE173C009C1C13 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
+		068BDFC723C303CF009C1C13 /* tennis-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tennis-512.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			children = (
 				068BDFC423BE173C009C1C13 /* logo.jpg */,
 				068BDFB423BDEEE8009C1C13 /* clubHouse.png */,
-				068BDFB323BDEEE8009C1C13 /* tenis.jpg */,
+				068BDFC723C303CF009C1C13 /* tennis-512.png */,
 			);
 			path = ImageAssets;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 				068BDFC523BE173C009C1C13 /* logo.jpg in Resources */,
 				068BDFA423BDE9E4009C1C13 /* Assets.xcassets in Resources */,
 				068BDFA223BDE9D6009C1C13 /* Main.storyboard in Resources */,
-				068BDFB523BDEEE8009C1C13 /* tenis.jpg in Resources */,
+				068BDFC923C303CF009C1C13 /* tennis-512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

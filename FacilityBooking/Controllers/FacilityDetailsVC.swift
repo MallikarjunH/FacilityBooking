@@ -53,11 +53,11 @@ class FacilityDetailsVC: UIViewController,UICollectionViewDelegate, UICollection
             self.facilityImage.image = UIImage(named: "clubHouse")
             self.firstSessionPriceLabel.text = "10 AM to 4 PM  - Rs.100/hr"
             self.secondSessionPriceLabel.isHidden = false
-            self.secondSessionPriceLabel.text = "4 AM to 10 PM  - Rs.500/hr"
+            self.secondSessionPriceLabel.text = "4 PM to 10 PM  - Rs.500/hr"
         }
         else{
-            self.facilityImage.image = UIImage(named: "tenis.jpg")
-            self.firstSessionPriceLabel.text = "Rs. 50/hr "
+            self.facilityImage.image = UIImage(named: "tennis-512.png")
+            self.firstSessionPriceLabel.text = "10 AM to 10 PM  - Rs.50/hr"
             self.secondSessionPriceLabel.isHidden = true
         }
         
