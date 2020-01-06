@@ -10,14 +10,14 @@ import Foundation
 
 class GlobalVariables {
     
-   
+    
     var selectedSlotsArrayForClub:[String] = []
     var selectedSlotsArrayForTennisCourt:[String] = []
     
     var selectedSlotsDataDictForClub:[String:Array] = [:] as! [String : Array<String>]
     
-   // var selectedSlotsForClubAccordingData = [[String:[String]]]()
-   // var selectedSlotsForTennisCourtAccordingData = [[String:[String]]]()
+    // var selectedSlotsForClubAccordingData = [[String:[String]]]()
+    // var selectedSlotsForTennisCourtAccordingData = [[String:[String]]]()
     
     class var sharedManager: GlobalVariables {
         struct Static {
@@ -26,8 +26,8 @@ class GlobalVariables {
         return Static.instance
     }
     
-  
     
-  
+    
+    
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class FacilityBookingTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var mainBGView: UIView!
     @IBOutlet weak var facilityImage: UIImageView!
     @IBOutlet weak var facilityNameLabel: UILabel!
@@ -21,20 +21,20 @@ class FacilityBookingTableViewCell: UITableViewCell {
         
         mainBGView.layer.cornerRadius = 5.0
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
 
 
 class TimeSelectionCollectionCell: UICollectionViewCell{
-
- // @IBOutlet weak var timeButton: UIButton!
-   
+    
+    // @IBOutlet weak var timeButton: UIButton!
+    
     @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
@@ -47,6 +47,6 @@ class TimeSelectionCollectionCell: UICollectionViewCell{
         timeLabel.textColor = greyColor
         
     }
-
-
+    
+    
 }

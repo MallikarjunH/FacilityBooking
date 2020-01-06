@@ -48,7 +48,7 @@ class FacilityBookingList: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       
+        
         let slotsDetails = self.storyboard!.instantiateViewController(withIdentifier: "FacilityDetailsVCId") as? FacilityDetailsVC
         slotsDetails?.tileString = boookingFacilitiesNameArray[indexPath.row]
         
